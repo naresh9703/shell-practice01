@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "Enter your pin number "
+timestamp =$(date)
 
-read -s PIN
-
-echo "your number is:$PIN"
+echo "script executed at :$timestamp"
