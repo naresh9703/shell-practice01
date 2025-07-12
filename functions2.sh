@@ -1,5 +1,7 @@
  #!/bin/bash
 
-echo  "\e[31m Hello world"
+echo -e "\e[31m Hello world \e[0m]"
+
+echo "HI naresh"
 
 
