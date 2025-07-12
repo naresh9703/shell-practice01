@@ -1,7 +1,7 @@
  #!/bin/bash
 
 userid=$(id -u)
-LOGS_FOLDER="/var/logs/shell/shell-practice01-logs"
+LOGS_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
