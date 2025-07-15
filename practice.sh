@@ -31,13 +31,13 @@ else
     echo "installing my sql is already exist"
 fi
 
-dnf list installed python
+dnf list installed python3
 
 if [ $? -ne 0 ]
 then
     echo "python is not installed need to install"
     dnf install python -y
-    validate $? "python"
+    validate $? "python3"
 else
     echo "installing python is already exist"
 fi
