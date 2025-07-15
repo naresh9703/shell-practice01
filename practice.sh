@@ -6,9 +6,9 @@ NUMBER=$1
 # -lt --> less than
 # -eq --> equal
 # -ne --> not equal
-if [ $NUMBERumber -gt 20 ]
+if [ $NUMBER -gt 20 ]
 then 
-    echo "Given number is greater then $Number"
+    echo "Given number $Number is greater then 20 "
 else
-    echo "Given number is less then $Number"
+    echo "Given number $Number is less then 20"
 fi
