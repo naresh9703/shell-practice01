@@ -16,6 +16,7 @@ validate(){
         echo "my sql is already installed"
     else
         echo "my sql need to be install"
+fi
 }
 
 
