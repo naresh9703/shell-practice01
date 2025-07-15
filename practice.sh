@@ -1,17 +1,10 @@
 #!/bin/bash
 
-NUMBER=$1
+userid=$(id -u)
 
-# -gt --> greater than
-# -lt --> less than
-# -eq --> equal
-# -ne --> not equal
-if [ $NUMBER -gt 20 ]
-then 
-    echo "Given number $NUMBER is greater then 20 "
-elif [ $NUMBER -lt 20 ]
+if [ $userid -ne 0 ]
 then
-    echo "Given number $NUMBER is less then 20"
-else 
-   echo "Given number is $NUMBER not equal to 20"
-fi
+    echo "user is not running with root access, please check the RC are re run"
+    exit 1
+else
+    echo "user is running with root access"
