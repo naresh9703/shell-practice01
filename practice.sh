@@ -11,4 +11,6 @@ Sum=$(($1+$2+$3))
 
 echo "Sum of $Value and $Value2 and $Value3 is: $Sum"
 
+sleep 2m
+
 echo "Script execute at $Timestamp"
