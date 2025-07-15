@@ -10,6 +10,15 @@ else
     echo "user is running with root access"
 fi
 
+validate(){
+    if [ $1 -eq 0 ]
+    then
+        echo "my sql is already installed"
+    else
+        echo "my sql need to be install"
+}
+
+
 dnf list installed mysql
 
 if [ $? -ne 0 ]
