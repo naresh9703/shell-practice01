@@ -13,12 +13,12 @@ fi
 validate(){
     if [ $1 -eq 0 ]
     then
-        echo "my sql is $2 already installed"
+        echo "Installing $2 is success"
     else
-        echo "my sql need $2 to be install"
+        echo "Installing $2 is failure"
+        exit 1
 fi
 }
-
 
 dnf list installed mysql
 
@@ -27,10 +27,18 @@ then
     echo "my sql is not installed need to install"
     dnf install mysql -y
     validate $? "mysql"
-elif [ $? -eq 0 ]
-then
-    echo "install the mysql"
 else
     echo "installing my sql is already exist"
+fi
+
+dnf list installed python
+
+if [ $? -ne 0 ]
+then
+    echo "python is not installed need to install"
+    dnf install python -y
+    validate $? "python"
+else
+    echo "installing python is already exist"
 fi
 
