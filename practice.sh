@@ -46,3 +46,4 @@ then
 else
     echo "Nothing to do $package is already $G exist $G" | tee -a $LOG_FILE
 fi
+done
