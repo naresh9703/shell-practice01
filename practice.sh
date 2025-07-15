@@ -1,16 +1,9 @@
 #!/bin/bash
 
-Value1=$1
-Value2=$2
-Value3=$3
+MOVIES= $1
 
-Timestamp=$(date)
-echo "Script executed at $Timestamp"
+echo "First Movie: ${MOVIES[0]}"
+echo "First Movie: ${MOVIES[3]}"
+echo "First Movie: ${MOVIES[4]}"
 
-Sum=$(($1+$2+$3))
-
-echo "Sum of $Value and $Value2 and $Value3 is: $Sum"
-
-sleep 2
-
-echo "Script execute at $Timestamp"
+echo "All movies: ${MOVIES[@]}"
