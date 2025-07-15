@@ -2,9 +2,14 @@
 
 userid=$(id -u)
 
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[34m"
+
 if [ $userid -ne 0 ]
 then
-    echo "user is not running with root access, please check the RC are re run"
+    echo -e "$R user is not running with root access, please check the RC are  $G re run"
     #exit 1
 else
     echo "user is running with root access"
@@ -31,14 +36,13 @@ else
     echo "installing my sql is already exist"
 fi
 
-dnf list installed python3
+dnf list intalled nginx
 
 if [ $? -ne 0 ]
-then
-    echo "python is not installed need to install"
-    dnf install python -y
-    validate $? "python3"
+then 
+    echo "nginx is not installed need to be install"
+    dnf install nginx -y
+    validate $? "nginx"
 else
-    echo "installing python is already exist"
+    echo "installing nginx is already exist"
 fi
-
