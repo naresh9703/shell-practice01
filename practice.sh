@@ -11,7 +11,7 @@ else
 fi
 
 validate(){
-    if [ $1 -ne 0 ]
+    if [ $1 -eq 0 ]
     then
         echo "my sql is $2 already installed"
     else
@@ -26,6 +26,7 @@ if [ $? -ne 0 ]
 then
     echo "my sql is not installed need to install"
     dnf install mysql -y
+    validate $? "mysql"
 elif [ $? -eq 0 ]
 then
     echo "install the mysql"
