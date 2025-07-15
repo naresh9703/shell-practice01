@@ -12,5 +12,5 @@ then
 elif [ $NUMBER -lt 20 ]
     echo "Given number $NUMBER is less then 20"
 else 
-   echo "Given number $NUMBER is not equal to 20"
+   echo "Given number is not equal to 20"
 fi
