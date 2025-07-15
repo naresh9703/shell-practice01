@@ -13,9 +13,9 @@ fi
 validate(){
     if [ $1 -ne 0 ]
     then
-        echo "my sql is already installed"
+        echo "my sql is $2 already installed"
     else
-        echo "my sql need to be install"
+        echo "my sql need $2 to be install"
 fi
 }
 
