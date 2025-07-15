@@ -14,6 +14,8 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 mkdir -p $LOGS_FOLDER
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
+PACKAGES=("mysql" "python3" "nginx" "httpd")
+
 
 if [ $userid -ne 0 ]
 then
@@ -33,23 +35,14 @@ validate(){
 fi
 }
 
+for package in ${PACKAGES[@]}
+do
 dnf list installed mysql &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
-    echo "my sql is not installed need to install" | tee -a $LOG_FILE
-    dnf install mysql -y &>>$LOG_FILE
-    validate $? "mysql" 
+    echo -e "$package is not installed need to $G install $G" | tee -a $LOG_FILE
+    dnf install $package -y &>>$LOG_FILE
+    validate $? "$package" 
 else
-    echo "installing my sql is already exist" | tee -a $LOG_FILE
-fi
-
-dnf list intalled nginx &>>$LOG_FILE
-
-if [ $? -ne 0 ]
-then 
-    echo "nginx is not installed need to be install" | tee -a $LOG_FILE
-    dnf install nginx -y &>>$LOG_FILE
-    validate $? "nginx"
-else
-    echo "installing nginx is already exist" | tee -a $LOG_FILE
+    echo "Nothing to do $package is already $G exist $G" | tee -a $LOG_FILE
 fi
