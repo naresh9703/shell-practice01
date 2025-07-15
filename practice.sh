@@ -1,21 +1,15 @@
 #!/bin/bash
 
-MOVIES=("Court" "HIT3" "PUSHPA2" "Thandel")
+NUMBER=$1
 
+# -gt --> greater than
+# -lt --> less than
+# -eq --> equal
+# -ne --> not equal
 
-
-
-echo "First Movie: ${MOVIES[0]}"
-echo "First Movie: ${MOVIES[3]}"
-echo "First Movie: ${MOVIES[4]}"
-
-echo "All movies: ${MOVIES[@]}"
-
-echo "Number of variables: $#"
-echo "Script name: $0"
-echo "Current Directory: $PWD"
-echo "User running this script: $USER"
-echo "Home directory of user: $HOME"
-echo "PID of the script: $$"
-sleep 10 &
-echo "PID of last command in background: $!"
+if [ $NUMBER -gt 10 ]
+then
+    echo "Given number $NUMBER is less than 10"
+else
+    echo "Given number $NUMBER is not less than 10"
+fi
