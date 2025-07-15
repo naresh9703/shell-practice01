@@ -20,6 +20,6 @@ elif [ $? -eq 0 ]
 then
     echo "install the mysql"
 else
-    echo "installing my sql is success"
+    echo "installing my sql is already exist"
 fi
 
