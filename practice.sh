@@ -11,4 +11,6 @@ then
     echo "Given number $Number is greater then 20 "
 else
     echo "Given number $Number is less then 20"
+else 
+   echo "Given number $Number is not equal to 20"
 fi
