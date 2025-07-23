@@ -2,10 +2,10 @@
 
 userid=$(id -u)
 
-R="\e[31m"
+R="\e[31m" 
 G="\e[32m"
 Y="\e[33m"
-N="\e[34m"
+N="\e[34m" 
 
 LOGS_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
@@ -37,7 +37,7 @@ fi
 
 for package in ${PACKAGES[@]}
 do
-dnf list installed mysql &>>$LOG_FILE
+dnf list installed $package &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
     echo -e "$package is not installed need to $G install $G" | tee -a $LOG_FILE

@@ -38,7 +38,7 @@ fi
 
 for package in ${PACKAGES[@]}
 do
-dnf list installed mysql &>>$LOG_FILE
+dnf list installed $package &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
     echo -e "$package is not installed need to $G install $G" | tee -a $LOG_FILE
