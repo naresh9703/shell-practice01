@@ -7,4 +7,4 @@ echo "PID of Script1: $$"
 
 #./script2.sh
 
-sorce ./script2.sh
+source ./script2.sh
